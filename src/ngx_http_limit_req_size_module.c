@@ -903,6 +903,7 @@ static char *ngx_http_limit_req_size_zone(ngx_conf_t *cf, ngx_command_t *cmd,
       len = value[i].len;
       p = value[i].data + len - 3;
 
+      // TODO: Change to bytes per second or bytes per minute
       if (ngx_strncmp(p, "r/s", 3) == 0) {
         scale = 1;
         len -= 3;
